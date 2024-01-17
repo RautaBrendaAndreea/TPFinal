@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+
+body {
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}

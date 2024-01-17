@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="input-group mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Rechercher"
+      [(ngModel)]="searchQuery"
+      (input)="onSearch()"
+    />
+  </div>
+
+  <div class="mb-3">
+    <label for="filterSelect" class="form-label">Filtrer par:</label>
+    <select
+      id="filterSelect"
+      class="form-select"
+      [(ngModel)]="selectedFilter"
+      (change)="onFilterChange()"
+    >
+      <option value="all">Tous les passagers</option>
+      <option value="survived">Les Survivants</option>
+      <option value="notSurvived">Ceux qui ont perdu la vie</option>
+    </select>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nom</th>
+        <th scope="col">Âge</th>
+        <th scope="col">Sexe</th>
+        <th scope="col">Classe</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let passenger of passengers">
+        <td>{{ passenger.Name }}</td>
+        <td>{{ passenger.Age }}</td>
+        <td>{{ passenger.Sex }}</td>
+        <td>{{ passenger.Pclass }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="text-center mt-3">
+    Page {{ currentPage }} sur {{ totalPages }}
+  </div>
+
+  <div class="btn-group mt-3" role="group">
+    <button class="btn btn-link" (click)="onPrevious()">Previous</button>
+    <button
+      class="btn btn-link"
+      *ngFor="let page of getPages()"
+      (click)="onPageChange(page)"
+      [class.active]="currentPage === page"
+    >
+      {{ page }}
+    </button>
+    <button class="btn btn-link" (click)="onNext()">Next</button>
+  </div>
+</div>

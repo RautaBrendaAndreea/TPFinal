@@ -1,0 +1,14 @@
+p {
+    font-style: italic;
+    font-size: 18px;
+    margin-bottom:0;
+    color: white;
+    text-align: center;
+    height: 92vh;
+    padding: 10%;
+}
+
+.background {
+    background: url('../../../assets/istockphoto-1306441450-612x612.jpg') no-repeat;
+    background-size: 100%;
+}

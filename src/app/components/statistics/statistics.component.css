@@ -1,0 +1,16 @@
+.dropdown-menu{
+    width: 145px;
+    border-radius: 20px;
+  }
+  
+  .dropdown-item{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 15px;
+    display: flex;
+    align-items: center;
+    color: #303AF3;
+    cursor: pointer;
+  }
